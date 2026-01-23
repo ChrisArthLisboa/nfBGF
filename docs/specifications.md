@@ -24,11 +24,11 @@
 
 ### Magic Number
 
-for big endian
+for little endian  
 0x666e474270466a72
 
 ```c
-int magic_number[8] = {0x66, 0x6e, 0x47, 0x42, 0x70, 0x46, 0x6a, 0x72} // small endian
+int magic_number[8] = {0x66, 0x6e, 0x47, 0x42, 0x70, 0x46, 0x6a, 0x72} // little endian
 ```
 
 for checking if little endian or big endian, check if the Magic Number in little endian  
