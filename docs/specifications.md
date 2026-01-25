@@ -52,4 +52,9 @@ offset for all of the header to reach at data
 
 ## Data
 
-
+| all | values | little-endian |
+| --------------- | --------------- | --------------- |
+| +0? | ?B | Position of object |
+| +0? | 1B | Layer |
+| +0? | 4B | Color (RGBa) |
+| +0? | 1B | Form |
