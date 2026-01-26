@@ -52,9 +52,32 @@ offset for all of the header to reach at data
 
 ## Data
 
+### Tag structure
+
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
-| +0? | ?B | Position of object |
+| +00 | 1B | Tag Amount of Objects |
+| +01 | 1B | Tag Amount of Attributes |
+
+It's recommended that the `Tag Amount of Attributes` is at least 1  
+since it will be used for recognizing the tag (for css or other changing object)
+but it can be 0
+
+| all | values | little-endian |
+| --------------- | --------------- | --------------- |
+| +02 | 1B | Attribute Name Size |
+| +03 | 1B | Attribute Data Size |
+| +04 | ?B | Attribute Name |
+| +0? | ?B | Attribute Data |
+
+if `Tag Amount of Objects` is 0 then  
+it means that there is no forms to draw  
+and it's only a placeholder tag
+
+| all | values | little-endian |
+| --------------- | --------------- | --------------- |
+| +0? | ?B | Position of Object |
 | +0? | 1B | Layer |
 | +0? | 4B | Color (RGBa) |
 | +0? | 1B | Form |
+
