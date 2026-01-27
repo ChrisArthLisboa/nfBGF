@@ -65,10 +65,10 @@ but it can be 0
 
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
-| +02 | 1B | Attribute Name Size |
-| +03 | 1B | Attribute Data Size |
-| +04 | ?B | Attribute Name |
-| +0? | ?B | Attribute Data |
+| +02 | 1B | Attribute Name Size (`ns`) |
+| +03 | 1B | Attribute Data Size (`ds`) |
+| +04 | `ds`B | Attribute Name |
+| +0? | `ns`B | Attribute Data |
 
 if `Tag Amount of Objects` is 0 then  
 it means that there is no forms to draw  
