@@ -79,7 +79,7 @@ and it's only a placeholder tag
 
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
-| +xx | xB | Position of Object | <- math objective
+| +xx | xB | Position of Object | <- math objective (needs to work as user units)
 | +xx | 1B | Layer |
 | +xx | 4B | Color (RGBa) |
 | +xx | 1B | Form |
