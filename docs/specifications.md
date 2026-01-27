@@ -11,8 +11,11 @@
 | -------------- | --------------- |
 | b | bit |
 | B | Byte |
+| Tag | the tag representation with attributes and draw calls |
+| Object | The draw call |
 
 ## Header
+
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
 | +00 | 8B | Magic Number |
@@ -67,8 +70,8 @@ but it can be 0
 | --------------- | --------------- | --------------- |
 | +02 | 1B | Attribute Name Size (`ns`) |
 | +03 | 1B | Attribute Data Size (`ds`) |
-| +04 | `ds`B | Attribute Name |
-| +0? | `ns`B | Attribute Data |
+| +04 | `ns`B | Attribute Name |
+| +xx | `ds`B | Attribute Data |
 
 if `Tag Amount of Objects` is 0 then  
 it means that there is no forms to draw  
@@ -76,8 +79,8 @@ and it's only a placeholder tag
 
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
-| +0? | ?B | Position of Object |
-| +0? | 1B | Layer |
-| +0? | 4B | Color (RGBa) |
-| +0? | 1B | Form |
+| +xx | xB | Position of Object | <- math objective
+| +xx | 1B | Layer |
+| +xx | 4B | Color (RGBa) |
+| +xx | 1B | Form |
 
