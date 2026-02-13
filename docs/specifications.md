@@ -11,7 +11,7 @@
 | -------------- | --------------- |
 | b | bit |
 | B | Byte |
-| Tag | the tag representation with attributes and draw calls |
+| Tag | representation with attributes and draw calls |
 | Object | The draw call |
 
 ## Header
@@ -75,12 +75,23 @@ but it can be 0
 
 if `Tag Amount of Objects` is 0 then  
 it means that there is no forms to draw  
-and it's only a placeholder tag
+and it's only a placeholder/data tag
 
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
-| +xx | xB | Position of Object | <- math objective (needs to work as user units)
-| +xx | 1B | Layer |
-| +xx | 4B | Color (RGBa) |
-| +xx | 1B | Form |
+| +00 | 4B | Position of Object |
+| +04 | 1B | Layer |
+| +05 | 4B | Color (RGBa) |
+| +09 | 1B | Form |
+
+Position of object is a coordinate in 2 groups of 2 bytes.  
+Each representing the initial position of the object in pixels  
+
+> For the beta version, it will follow a pixel position like shown
+
+Form can be either:
+1. Rectangle
+1. Circle
+1. Line
+1. SVG
 
