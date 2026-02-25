@@ -91,6 +91,7 @@ Each representing the initial position of the object in pixels
 
 Form can be either:
 1. Rectangle
+1. Text
 1. Circle
 1. Line
 1. SVG
