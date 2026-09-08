@@ -19,11 +19,10 @@
 | all | values | little-endian |
 | --------------- | --------------- | --------------- |
 | +00 | 8B | Magic Number |
-| +08 | 1B | Version Number |
+| +08 | 2B | Version Number |
 | +0a | 4B | CRC32 |
 | +0e | 4B | File Lenght |
 | +12 | 2B | data offset |
-| +xx | xx | data |
 
 ### Magic Number
 
